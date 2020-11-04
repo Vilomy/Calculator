@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var displayResultLabel: UILabel!
+    @IBOutlet var buttonSetting: [UIButton]!
+    
+    @IBOutlet weak var viewSetting: UIView!
     var dotIsPlased = false
     var stillTyping = false
     var firstOperand = 0.0
@@ -30,6 +33,17 @@ class ViewController: UIViewController {
             stillTyping = false
         }
     }
+      
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for button in buttonSetting {
+            button.layer.cornerRadius = 10
+            
+        }
+        displayResultLabel.layer.cornerRadius = 10
+        viewSetting.layer.cornerRadius = 15
+    }
+    
     func operateWithTwoOperands(operant: (Double, Double) -> Double) {
         currentInput = operant(firstOperand, secondOperand)
         stillTyping = false
