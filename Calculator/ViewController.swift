@@ -41,6 +41,7 @@ class ViewController: UIViewController {
             
         }
         displayResultLabel.layer.cornerRadius = 10
+        displayResultLabel.layer.masksToBounds = true
         viewSetting.layer.cornerRadius = 15
     }
     
